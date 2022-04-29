@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/activity_main.xml" value="0.17135416666666667" />
+        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/activity_horoscope_find.xml" value="0.25" />
+        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/activity_horoscope_tag_menu.xml" value="0.18541666666666667" />
+        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/activity_menu.xml" value="0.25" />
+        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/activity_user_settings.xml" value="0.18541666666666667" />
+        <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/horoscope_options_layout.xml" value="0.22" />
         <entry key="..\:/osman/DailyHoroscopeApp/app/src/main/res/layout/main_background.xml" value="0.18541666666666667" />
       </map>
     </option>

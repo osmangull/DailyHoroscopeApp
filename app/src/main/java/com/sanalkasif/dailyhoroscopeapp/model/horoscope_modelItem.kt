@@ -1,6 +1,7 @@
 package com.sanalkasif.dailyhoroscopeapp.model
 
 
+import android.graphics.drawable.Drawable
 import com.google.gson.annotations.SerializedName
 
 data class horoscope_modelItem(
@@ -13,5 +14,9 @@ data class horoscope_modelItem(
     @SerializedName("GunlukYorum")
     val gunlukYorum: String,
     @SerializedName("Mottosu")
-    val mottosu: String
+    val mottosu: String,
+    @SerializedName("Yorum")
+    val yorum: String,
+    @SerializedName("Zaman")
+    val zaman: String
 )

@@ -3,6 +3,7 @@ package com.sanalkasif.dailyhoroscope.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.sanalkasif.dailyhoroscopeapp.R
 import com.sanalkasif.dailyhoroscopeapp.model.horoscope_model
 import com.sanalkasif.dailyhoroscopeapp.service.HoroscopeApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -51,5 +52,6 @@ class MainViewModel : ViewModel() {
         )
 
     }
+
 
 }

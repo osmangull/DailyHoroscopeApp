@@ -38,7 +38,7 @@ class TagDetailActivity : AppCompatActivity() {
 
         viewmodel.horoscope_data.observe(this, Observer { data ->
             data?.let {
-                setHoroscopeImage(data[0].burc);
+                setHoroscopeImage(data[0].burc)
                 tagTitle.text = data[0].ozellik
                 baslik.text = data[0].baslik
                 yorum.text = data[0].yorum
@@ -49,7 +49,7 @@ class TagDetailActivity : AppCompatActivity() {
         viewmodel.horoscope_error.observe(this, Observer { error ->
             error?.let {
                 if (error) {
-                    Log.i("deneme","error")
+                        Log.i("deneme","error")
 
                 } else {
                     Log.i("deneme","noterror")

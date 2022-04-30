@@ -3,10 +3,17 @@ package com.sanalkasif.dailyhoroscopeapp.view
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.sanalkasif.dailyhoroscope.viewmodel.MainViewModel
 import com.sanalkasif.dailyhoroscopeapp.R
 import com.sanalkasif.dailyhoroscopeapp.helpers.CircularProgress
@@ -19,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private var cp: CircularProgress? = null
     private lateinit var SET: SharedPreferences.Editor
     private lateinit var GET: SharedPreferences
-
+    private var mInterstitialAd: InterstitialAd? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         cp = CircularProgress(this);
         GET = getSharedPreferences(packageName, MODE_PRIVATE)
         SET = GET.edit()
+
+
         if (horoscopTime.toString().equals("")) {
             viewmodel = ViewModelProviders.of(this).get(MainViewModel::class.java)
             viewmodel.refreshData(horoscopeName!!,"")
@@ -37,13 +46,31 @@ class MainActivity : AppCompatActivity() {
             viewmodel.refreshData(horoscopeName!!,horoscopTime.toString())
 
         }
+        var adRequest = AdRequest.Builder().build()
 
+        InterstitialAd.load(this,"ca-app-pub-5073720258631379/6773839442", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d("errorMain", adError?.message)
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d("loadMain", "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+            }
+        })
+
+        Handler().postDelayed({
+            Log.i("asdasd",mInterstitialAd.toString()+"")
+            mInterstitialAd?.show(this)
+        }, 4000)
 
         menu_icon.setOnClickListener(){
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
         }
         getLiveData()
+
     }
 
     private fun getLiveData() {

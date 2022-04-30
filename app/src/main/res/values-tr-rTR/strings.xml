@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Günlük Burç</string>
+    <string name="app_widget_description">Açıklama</string>
+    <string name="configure">Ayar</string>
+</resources>

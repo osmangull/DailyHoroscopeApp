@@ -7,25 +7,40 @@
     android:layout_gravity="center"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Buç Yorumları"
+        android:textColor="#fff"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="180dp"
-            android:layout_height="220dp"
+            android:id="@+id/cardViewGunluk"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
             android:layout_margin="8dp"
+            android:layout_marginStart="95dp"
             android:layout_marginTop="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="#540013BA"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
             app:contentPadding="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/cardView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -36,53 +51,41 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:src="@drawable/daily"
                     android:id="@+id/category_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/daily"
+                    app:tint="#fff" />
 
                 <TextView
-                    android:textSize="16dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Günlük"
                     android:id="@+id/category_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal" />
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Günlük"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal" />
-            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView1"
-            android:layout_width="180dp"
-            android:layout_height="220dp"
+            android:id="@+id/cardViewYil"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
             android:layout_margin="8dp"
             android:layout_marginEnd="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="#540013BA"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
             app:contentPadding="16dp"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+            app:layout_constraintTop_toBottomOf="@+id/cardViewHafta">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,29 +93,32 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:src="@drawable/year"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/year"
+                    app:tint="#fff" />
 
                 <TextView
-                    android:textSize="16dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Yıllık"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal" />
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Yıllık"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="180dp"
-            android:layout_height="220dp"
+            android:id="@+id/cardViewHafta"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
             android:layout_margin="8dp"
-            android:layout_marginEnd="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="#540013BA"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
             app:contentPadding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -124,33 +130,37 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:src="@drawable/week"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/week"
+                    app:tint="#fff" />
 
                 <TextView
-                    android:textSize="16dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Haftalık"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal" />
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Haftalık"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="180dp"
-            android:layout_height="220dp"
+            android:id="@+id/cardViewAylik"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
+            android:layout_marginStart="95dp"
+            app:cardBackgroundColor="#540013BA"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
             app:contentPadding="16dp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/cardView1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView">
+            app:layout_constraintTop_toBottomOf="@+id/cardViewGunluk">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -159,19 +169,21 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:src="@drawable/month"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/month"
+                    app:tint="#fff" />
 
                 <TextView
-                    android:textSize="16dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Aylık"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal" />
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Aylık"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,50 +1,56 @@
 package com.sanalkasif.dailyhoroscopeapp.view
 
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sanalkasif.dailyhoroscope.viewmodel.MainViewModel
 import com.sanalkasif.dailyhoroscopeapp.R
+import com.sanalkasif.dailyhoroscopeapp.helpers.CircularProgress
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewmodel: MainViewModel
-    private lateinit var GET: SharedPreferences
-    private lateinit var SET: SharedPreferences.Editor
+    private var cp: CircularProgress? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val horoscopeName=intent.getStringExtra("horoscopeName")
+        val horoscopTime=intent.getStringExtra("horoscopeTime")
+        cp = CircularProgress(this);
+        if (horoscopTime.toString().equals("")) {
+            viewmodel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+            viewmodel.refreshData(horoscopeName!!,"")
 
-        GET = getSharedPreferences(packageName, MODE_PRIVATE)
-        SET = GET.edit()
+        } else{
+            viewmodel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+            viewmodel.refreshData(horoscopeName!!,horoscopTime.toString())
 
-        viewmodel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        }
 
-        var cName = GET.getString("burcAdi", "aslan")?.toLowerCase()
-        viewmodel.refreshData(cName!!)
 
+        menu_icon.setOnClickListener(){
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+        }
         getLiveData()
-
-
     }
 
     private fun getLiveData() {
 
         viewmodel.horoscope_data.observe(this, Observer { data ->
             data?.let {
-                Log.i("deneme",data[0].gunlukYorum)
                 setHoroscopeImage(data[0].burc);
                 horoscope_name.text = data[0].burc
                 element.text = data[0].elementi
                 gezegen.text = data[0].gezegeni
                 motto.text = data[0].mottosu
 
-                if (!data[0].gunlukYorum.equals("")){//gunluk yorum haricinde dolu gelmez
+                if (data[0].gunlukYorum != null && !data[0].gunlukYorum.equals("")){//gunluk yorum haricinde dolu gelmez
                     yorum.text = data[0].gunlukYorum
                 }else{
                     yorum.text =data[0].yorum
@@ -55,10 +61,8 @@ class MainActivity : AppCompatActivity() {
         viewmodel.horoscope_error.observe(this, Observer { error ->
             error?.let {
                 if (error) {
-                    Log.i("deneme","error")
 
                 } else {
-                    Log.i("deneme","noterror")
 
                 }
             }
@@ -67,10 +71,10 @@ class MainActivity : AppCompatActivity() {
         viewmodel.horoscope_loading.observe(this, Observer { loading ->
             loading?.let {
                 if (loading) {
-                    Log.i("deneme","load")
+                    cp?.ShowCircularProgress()
 
                 } else {
-                    Log.i("deneme","notload")
+                    cp?.DismissCircularProgress()
 
                 }
             }

@@ -3,7 +3,6 @@ package com.sanalkasif.dailyhoroscope.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sanalkasif.dailyhoroscopeapp.R
 import com.sanalkasif.dailyhoroscopeapp.model.horoscope_model
 import com.sanalkasif.dailyhoroscopeapp.service.HoroscopeApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -22,8 +21,11 @@ class MainViewModel : ViewModel() {
     val horoscope_error = MutableLiveData<Boolean>() // if this value is false// observer run and error screen is active
     val horoscope_loading = MutableLiveData<Boolean>()
 
-    fun refreshData(horoscopeName: String) {
+    fun refreshData(horoscopeName: String,time : String) {
+        if (time.equals(""))
         getDataFromAPI(horoscopeName)
+        else
+            getDataWithTimeFromAPI(horoscopeName,time)
     }
 
     private fun getDataFromAPI(horoscopeName: String) {
@@ -31,6 +33,33 @@ class MainViewModel : ViewModel() {
         horoscope_loading.value = true
         disposable.add(
             horoscopeApiService.getData(horoscopeName)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<horoscope_model>() {
+
+                    override fun onSuccess(t: horoscope_model) {
+                        horoscope_data.value = t
+                        horoscope_error.value = false
+                        horoscope_loading.value = false
+                        Log.d(TAG, "onSuccess: Success")
+                    }
+
+                    override fun onError(e: Throwable) {
+                        horoscope_error.value = true
+                        horoscope_loading.value = false
+                        Log.e(TAG, "onError: " + e)
+                    }
+
+                })
+        )
+
+    }
+
+    private fun getDataWithTimeFromAPI(horoscopeName: String,time:String) {
+
+        horoscope_loading.value = true
+        disposable.add(
+            horoscopeApiService.getDataWithTime(horoscopeName,time)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<horoscope_model>() {

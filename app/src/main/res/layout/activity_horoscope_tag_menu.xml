@@ -4,6 +4,438 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_background"
     tools:context=".view.HoroscopeTagMenuActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <LinearLayout
+          android:paddingTop="25dp"
+          android:paddingBottom="25dp"
+          android:layout_marginBottom="8dp"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <TextView
+              android:text="Burç Bilgileri"
+              android:textSize="35dp"
+              android:textColor="#fff"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+          <LinearLayout
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:weightSum="2"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/ask"
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:layout_height="140dp"
+                  android:layout_marginEnd="16dp"
+                  android:elevation="2dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/love"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Aşk"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:id="@+id/kariyer"
+                  android:layout_width="140dp"
+                  android:layout_height="140dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/kariyer"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Kariyer"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:weightSum="2"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:layout_height="140dp"
+                  android:layout_marginEnd="16dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  android:id="@+id/saglik"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/health"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Sağlık"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:id="@+id/stil"
+                  android:layout_height="140dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/style"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Stil"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:weightSum="2"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:layout_height="140dp"
+                  android:layout_marginEnd="16dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  android:id="@+id/kadini"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/famale"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:id="@+id/kadin_text"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Kadın"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:layout_height="140dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  android:id="@+id/erkegi"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/male"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:id="@+id/erkek_text"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Erkek"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+
+              </androidx.cardview.widget.CardView>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:weightSum="2"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:layout_height="140dp"
+                  android:id="@+id/olumlu"
+                  android:layout_marginEnd="16dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/positive"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Olumlu Yönler"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:id="@+id/zitlik"
+                  android:layout_height="140dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/opposite"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Zıt Burçları"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+          </LinearLayout>
+          <LinearLayout
+              android:layout_marginRight="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="16dp"
+              android:weightSum="2"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:id="@+id/diyet"
+                  android:layout_height="140dp"
+                  android:layout_marginEnd="16dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/diet"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Diyet"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:layout_weight="1"
+                  android:layout_width="140dp"
+                  android:id="@+id/eglence"
+                  android:layout_height="140dp"
+                  app:cardBackgroundColor="#540013BA"
+                  app:cardCornerRadius="8dp"
+                  app:cardElevation="2dp"
+                  app:contentPadding="16dp">
+
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical">
+
+                      <ImageView
+                          android:id="@+id/category_image"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:src="@drawable/famous"
+                          app:tint="#fff" />
+
+                      <TextView
+                          android:id="@+id/category_name"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="5dp"
+                          android:gravity="center_horizontal"
+                          android:text="Eğlence Hayatı"
+                          android:textColor="#fff"
+                          android:textSize="18sp" />
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+          </LinearLayout>
+      </LinearLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

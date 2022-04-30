@@ -1,21 +1,52 @@
 package com.sanalkasif.dailyhoroscopeapp.view
 
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.sanalkasif.dailyhoroscopeapp.R
 import kotlinx.android.synthetic.main.activity_horoscope_find.*
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class HoroscopeFindActivity : AppCompatActivity() {
+
+    private lateinit var GET: SharedPreferences
+    private lateinit var SET: SharedPreferences.Editor
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_horoscope_find)
+        GET = getSharedPreferences(packageName, MODE_PRIVATE)
+        SET = GET.edit()
+
         button.setOnClickListener(){
-            horoscope_txt.text = horoscopeCalculate(datePicker1.dayOfMonth,datePicker1.month);
+            horoscope_txt.text = horoscopeCalculate(datePicker1.dayOfMonth,datePicker1.month+1);
             horoscope_txt.visibility = View.VISIBLE
+            kaydet.visibility = View.VISIBLE
+        }
+
+        kaydet.setOnClickListener(){
+            SET.putString("horoscopeDefaultName", horoscope_txt.text.toString())
+            SET.apply()
+            Toast.makeText(applicationContext, "Kaydediliyor...", Toast.LENGTH_SHORT).show()
+            kaydet.visibility = View.GONE
+            Handler().postDelayed({
+                Toast.makeText(applicationContext, "Hadi Başlayalım!", Toast.LENGTH_SHORT).show()
+                horoscopeMenu.visibility = View.VISIBLE
+                val animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.alpha)
+                horoscopeMenu.startAnimation(animationFadeIn)
+                horoscopeMenu.setOnClickListener(){
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("horoscopeName",horoscope_txt.text.toString())
+                    intent.putExtra("horoscopeTime","")
+                    startActivity(intent)
+                    finish()
+                }
+            }, 2500)
         }
     }
 
@@ -61,7 +92,7 @@ class HoroscopeFindActivity : AppCompatActivity() {
 
             }
             5 -> {
-                return if (day<=20){
+                return if (day<=21){
                     "Boga";
                 }else if (day <= 30){
                     "Ikizler"

@@ -8,6 +8,17 @@
     android:layout_gravity="center"
     tools:context=".view.MainActivity">
 
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/crystalball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/horoscope_img"
         android:layout_width="wrap_content"
@@ -15,10 +26,10 @@
         android:layout_marginStart="173dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="174dp"
-        android:src="@drawable/cancer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_icon"
+        app:tint="#fff" />
 
     <TextView
         android:id="@+id/horoscope_name"
@@ -27,7 +38,7 @@
         android:layout_marginStart="173dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="174dp"
-        android:text="Cancer"
+        android:textColor="#fff"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +53,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
+        app:cardBackgroundColor="#540013BA"
+        app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,14 +64,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/yorum_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Günlük Yorum" />
+                android:textColor="#fff"
+                android:text="Yorum" />
 
             <TextView
                 android:id="@+id/yorum"
@@ -68,6 +84,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:textColor="#fff"
                 android:padding="10dp"
                 tools:text="Lorem Ipsum is simply ting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
         </LinearLayout>
@@ -81,15 +98,17 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#540013BA"
         app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
+        app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <LinearLayout
-
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -101,7 +120,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="#C50E0E"
+                android:textColor="#EF2929"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:text="Burç Özellikleri" />
             <LinearLayout
@@ -114,11 +134,13 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="Element: "
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:text="Ateş"
+                    android:text=""
                     android:id="@+id/element"
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -131,28 +153,32 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="Gezegeni: "
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:text="Ateş"
+                    android:text=""
                     android:id="@+id/gezegen"
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center"
                 android:layout_weight="2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="Mottosu: "
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:text="Ateş"
+                    android:text=""
                     android:id="@+id/motto"
+                    android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

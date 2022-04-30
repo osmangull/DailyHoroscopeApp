@@ -17,6 +17,7 @@
     <style name="circular_progress_theme">
         <item name="colorAccent">#99e6ff</item>
     </style>
+
     <style name="splashScreen" parent="Theme.DailyHoroscopeApp">
         <item name="background">@drawable/main_background</item>
     </style>
@@ -25,5 +26,20 @@
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/purple_500</item>
         <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="Theme.DailyHoroscopeApp.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+        <!-- Radius of the outer bound of widgets to make the rounded corners -->
+        <item name="appWidgetRadius">16dp</item>
+        <!--
+        Radius of the inner view's bound of widgets to make the rounded corners.
+        It needs to be 8dp or less than the value of appWidgetRadius
+        -->
+        <item name="appWidgetInnerRadius">8dp</item>
+    </style>
+
+    <style name="Theme.DailyHoroscopeApp.AppWidgetContainer" parent="Theme.DailyHoroscopeApp.AppWidgetContainerParent">
+        <!-- Apply padding to avoid the content of the widget colliding with the rounded corners -->
+        <item name="appWidgetPadding">10dp</item>
     </style>
 </resources>

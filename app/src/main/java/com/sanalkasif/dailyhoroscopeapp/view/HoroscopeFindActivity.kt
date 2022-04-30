@@ -11,17 +11,22 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sanalkasif.dailyhoroscopeapp.R
 import kotlinx.android.synthetic.main.activity_horoscope_find.*
 import kotlinx.android.synthetic.main.activity_splash_screen.*
+import java.util.*
+import kotlin.time.Duration.Companion.milliseconds
 
 class HoroscopeFindActivity : AppCompatActivity() {
 
     private lateinit var GET: SharedPreferences
     private lateinit var SET: SharedPreferences.Editor
+    private lateinit var calendar: Calendar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_horoscope_find)
         GET = getSharedPreferences(packageName, MODE_PRIVATE)
         SET = GET.edit()
+        calendar = Calendar.getInstance()
+        datePicker1.maxDate= calendar.timeInMillis
 
         button.setOnClickListener(){
             horoscope_txt.text = horoscopeCalculate(datePicker1.dayOfMonth,datePicker1.month+1);
@@ -55,7 +60,7 @@ class HoroscopeFindActivity : AppCompatActivity() {
         when (month) {
             1 -> {
                 return if (day<=21){
-                    "Oglak";
+                    "Oğlak";
                 }else if (day <= 31){
                     "Kova"
                 }else{
@@ -66,7 +71,7 @@ class HoroscopeFindActivity : AppCompatActivity() {
                 return if (day<=19){
                     "Kova";
                 }else if (day <= 29){
-                    "Balik"
+                    "Balık"
                 }else{
                     "Hatali giris!"
                 }
@@ -74,18 +79,18 @@ class HoroscopeFindActivity : AppCompatActivity() {
             }
             3 -> {
                 return if (day<=20){
-                    "Balik";
+                    "Balık";
                 }else if (day <= 31){
-                    "Koc"
+                    "Koç"
                 }else{
                     "Hatali giris!"
                 }
             }
             4 -> {
                 return if (day<=20){
-                    "Koc";
+                    "Koç";
                 }else if (day <= 30){
-                    "Boga"
+                    "Boğa"
                 }else{
                     "Hatali giris!"
                 }
@@ -93,9 +98,9 @@ class HoroscopeFindActivity : AppCompatActivity() {
             }
             5 -> {
                 return if (day<=21){
-                    "Boga";
+                    "Boğa";
                 }else if (day <= 30){
-                    "Ikizler"
+                    "İkizler"
                 }else{
                     "Hatali giris!"
                 }
@@ -103,16 +108,16 @@ class HoroscopeFindActivity : AppCompatActivity() {
             }
             6 -> {
                 return if (day<=22){
-                    "Ikizler";
+                    "İkizler";
                 }else if (day <= 30){
-                    "Yengec"
+                    "Yengeç"
                 }else{
                     "Hatali giris!"
                 }
             }
             7 -> {
                 return if (day<=22){
-                    "Yengec";
+                    "Yengeç";
                 }else if (day <= 31){
                     "Aslan"
                 }else{
@@ -123,14 +128,14 @@ class HoroscopeFindActivity : AppCompatActivity() {
                 return if (day<=22){
                     "Aslan";
                 }else if (day <= 31){
-                    "Basak"
+                    "Başak"
                 }else{
                     "Hatali giris!"
                 }
             }
             9 -> {
                 return if (day<=22){
-                    "Basak";
+                    "Başak";
                 }else if (day <= 30){
                     "Terazi"
                 }else{
@@ -160,7 +165,7 @@ class HoroscopeFindActivity : AppCompatActivity() {
                 return if (day<=21){
                     "Yay";
                 }else if (day <= 30){
-                    "Oglak"
+                    "Oğlak"
                 }else{
                     "Hatali giris!"
                 }

@@ -75,17 +75,17 @@ class TagDetailActivity : AppCompatActivity() {
     private fun setHoroscopeImage(horoscopeName:String){
         when(horoscopeName.lowercase(Locale.getDefault())){
             "aslan" ->image_horoscope.setImageResource(R.drawable.leo)
-            "yengec" ->image_horoscope.setImageResource(R.drawable.cancer)
-            "boga" -> image_horoscope.setImageResource(R.drawable.taurus)
+            "yengeç" ->image_horoscope.setImageResource(R.drawable.cancer)
+            "boğa" -> image_horoscope.setImageResource(R.drawable.taurus)
             "balık" -> image_horoscope.setImageResource(R.drawable.pisces)
             "kova" -> image_horoscope.setImageResource(R.drawable.aquarius)
-            "oglak" -> image_horoscope.setImageResource(R.drawable.capricorn)
-            "koc" -> image_horoscope.setImageResource(R.drawable.aries)
+            "oğlak" -> image_horoscope.setImageResource(R.drawable.capricorn)
+            "koç" -> image_horoscope.setImageResource(R.drawable.aries)
             "ikizler" -> image_horoscope.setImageResource(R.drawable.gemini)
             "terazi" -> image_horoscope.setImageResource(R.drawable.libra)
             "yay" -> image_horoscope.setImageResource(R.drawable.sagittarius)
             "akrep" -> image_horoscope.setImageResource(R.drawable.scorpio)
-            "basak" -> image_horoscope.setImageResource(R.drawable.virgo)
+            "başak" -> image_horoscope.setImageResource(R.drawable.virgo)
             else ->{
                 image_horoscope.setImageResource(R.drawable.virgo)
             }

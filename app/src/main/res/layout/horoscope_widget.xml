@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.DailyHoroscopeApp.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_background"
+    android:theme="@style/Theme.DailyHoroscopeApp.AppWidgetContainer">
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:src="@drawable/crystalball"
+        android:layout_width="32dp"
+        android:layout_height="32dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/app_name"
+        android:text="Günlük Yorumunuz"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:textSize="12dp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/yorum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/app_name"
+        android:text="Günlük yorumunuz için tıklayın..."
+        android:textSize="10dp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textStyle="italic"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/white"
+        android:layout_gravity="right"
+        android:textSize="10dp"
+        android:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -17,8 +17,12 @@
         <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/activity_menu.xml" value="0.2911458333333333" />
         <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.27708333333333335" />
         <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/activity_tag_detail.xml" value="0.33" />
+        <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/appwidget_info.xml" value="0.34427083333333336" />
         <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/horoscope_options_layout.xml" value="0.33" />
+        <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/horoscope_widget.xml" value="0.35280797101449274" />
+        <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/new_app_widget.xml" value="0.35280797101449274" />
         <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/spinner_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/osman/projects/DailyHoroscopeApp/app/src/main/res/layout/widget_item_layout.xml" value="0.35280797101449274" />
       </map>
     </option>
   </component>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "657610254529",
+    "project_id": "dailyhoroscopeapp-91695",
+    "storage_bucket": "dailyhoroscopeapp-91695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657610254529:android:29305b2b533b6e28f98c40",
+        "android_client_info": {
+          "package_name": "com.sanalkasif.dailyhoroscopeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657610254529-d8pi3pdk0u38vfo0ap64uomsounikj71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhiImyRuCWgIo3T3YXWCmWcDyyJ0EhSL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657610254529-d8pi3pdk0u38vfo0ap64uomsounikj71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

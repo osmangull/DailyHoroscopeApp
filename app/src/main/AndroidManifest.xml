@@ -13,7 +13,7 @@
         android:theme="@style/Theme.DailyHoroscopeApp">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5073720258631379~5608344859"/>
+            android:value="ca-app-pub-5073720258631379~8990322138"/>
         <receiver
             android:name=".widget.HoroscopeWidget"
             android:exported="true">

@@ -8,10 +8,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.sanalkasif.dailyhoroscope.viewmodel.MainViewModel
@@ -48,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
         var adRequest = AdRequest.Builder().build()
 
-        InterstitialAd.load(this,"ca-app-pub-5073720258631379/6773839442", adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(this,"ca-app-pub-5073720258631379/1163840994", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 Log.d("errorMain", adError?.message)
                 mInterstitialAd = null
@@ -61,9 +58,8 @@ class MainActivity : AppCompatActivity() {
         })
 
         Handler().postDelayed({
-            Log.i("asdasd",mInterstitialAd.toString()+"")
             mInterstitialAd?.show(this)
-        }, 4000)
+        }, 5000)
 
         menu_icon.setOnClickListener(){
             val intent = Intent(this, MainMenuActivity::class.java)
